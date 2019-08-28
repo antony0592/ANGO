@@ -13,19 +13,19 @@ class CrearTBLuser extends Migration
      */
     public function up()
     {
-        Schema::create('tbluser', function (Blueprint $table) {
+       Schema::create('tbluser', function (Blueprint $table) {
             $table->increments('tbuserid');
-            $table->string('tbuseridcountry');
-            $table->integer('tbuseridleveluser',1);
+            $table->integer('tbuseridcountry');
+            $table->smallInteger('tbuseridleveluser');
             $table->string('tbusername',20);
             $table->string('tbuserlastname',30);
             $table->string('tbuserusername',10);
             $table->string('tbuseremail',20)->unique();
             $table->string('tbuserpassword',15);
-            $table->text('tbuseraddress');
+            $table->text('tbuseraddress')->default('Null');
             $table->string('tbusercreditcard',18);
-            $table->string('tbuserimage',45);
-            $table->boolean('tbuseractive',true);
+            $table->string('tbuserimage',100);
+            $table->boolean('tbuseractive')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });
