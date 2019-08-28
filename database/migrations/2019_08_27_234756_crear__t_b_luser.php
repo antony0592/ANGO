@@ -13,7 +13,7 @@ class CrearTBLuser extends Migration
      */
     public function up()
     {
-       Schema::create('tbluser', function (Blueprint $table) {
+       Schema::create('tbuser', function (Blueprint $table) {
             $table->increments('tbuserid');
             $table->integer('tbuseridcountry')->unsigned();
             $table->smallInteger('tbuseridleveluser')->unsigned();
