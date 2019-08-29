@@ -13,6 +13,9 @@ info:
   license:
     name: "Apache 2.0"
     url:  "http://www.apache.org/licenses/LICENSE-2.0.html"
+    
+    name: "Laravel 6"
+    url:  "https://opensource.org/licenses/MIT"
 
   contact: 
     email: 
