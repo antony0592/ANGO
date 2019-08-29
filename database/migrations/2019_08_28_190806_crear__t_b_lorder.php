@@ -14,7 +14,8 @@ class CrearTBLorder extends Migration
     public function up()
     {
         Schema::create('tborder', function (Blueprint $table) {
-            $table->Increments('tborderidclient');
+            $table->Increments('tborderid');
+            $table->integer('tborderidclient');
             $table->Text('tborderdescription',500);
             $table->decimal('tbordertotalprice', 10, 2)->default(0,00);
             $table->integer('tbordermethodpay');
