@@ -34,5 +34,13 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
     public function shoppingcart(){
         return $this->hasOne('App\ShoppingCart');
     }
- 
+    public function country(){
+        return $this->belongsTo('app/Country');
+    }
+    public function userlevel(){
+        return $this->belongsTo('app/UserLevel');
+    }
+    public function orders(){
+        return $this->hashMany('app/Order');
+    }
 }

@@ -19,6 +19,7 @@ class Product extends Model
     public function shoppingcart(){
         return $this->hashMany('app/Shoppingcart');
     }
-    
-
+    public function orderdetails(){
+        return $this->hashMany('app/Orderdetails');
+    }
 }
