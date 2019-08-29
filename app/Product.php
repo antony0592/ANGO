@@ -16,5 +16,9 @@ class Product extends Model
     public function category(){
         return $this->belongsTo('app/Category');
     }
+    public function shoppingcart(){
+        return $this->hashMany('app/Shoppingcart');
+    }
+    
 
 }
