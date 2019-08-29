@@ -31,5 +31,13 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
      */
     protected $hidden = ['tbuserpassword', 'remember_token', 'tbusercreditcard', ];
 
- 
+    public function country(){
+        return $this->belongsTo('app/Country');
+    }
+    public function userlevel(){
+        return $this->belongsTo('app/UserLevel');
+    }
+    public function orders(){
+        return $this->hashMany('app/Order');
+    }
 }
