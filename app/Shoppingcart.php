@@ -13,7 +13,7 @@ class Shoppingcart extends Model
     public function product(){
         return $this->belongsTo('app/Product');
     }
-    public function userlevel(){
-        return $this->belongsTo('app/Userlevel');
+    public function user(){
+        return $this->hasOne('App\User');
     }
 }

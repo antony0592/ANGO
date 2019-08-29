@@ -10,7 +10,5 @@ class Userlevel extends Model
     protected $primaryKey = 'tbuserlevelid';
     protected $fillable = ['tbuserlevelname',];
 
-    public function shoppingcart(){
-        return $this->hashMany('app/Shoppingcart');
-    }
+
 }

@@ -31,5 +31,8 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
      */
     protected $hidden = ['tbuserpassword', 'remember_token', 'tbusercreditcard', ];
 
+    public function shoppingcart(){
+        return $this->hasOne('App\ShoppingCart');
+    }
  
 }
