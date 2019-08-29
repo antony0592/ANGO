@@ -9,4 +9,8 @@ class Product extends Model
     protected $table = 'tbproduct';
     protected $primaryKey = 'tbproductid';
     protected $fillable = ['tbproductidsupplier','tbproductidcategory','tbproductname', 'tbproductprice','tbproductactive','tbproductvisits','tbproductstock',];
+
+    public function orderdetails(){
+        return $this->hashMany('app/Orderdetails');
+    }
 }
