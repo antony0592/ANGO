@@ -14,7 +14,7 @@ class CrearTBLmethodpay extends Migration
     public function up()
     {
         Schema::create('tbmethodpay', function (Blueprint $table) {
-            $table->bigIncrements('tbmethodpayid');
+            $table->Increments('tbmethodpayid');
             $table->string('tbmethodpaynombre');
             $table->timestamps();
         });
