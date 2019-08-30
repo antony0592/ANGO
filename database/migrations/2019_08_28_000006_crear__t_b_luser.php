@@ -11,12 +11,13 @@ class CrearTBLuser extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
        Schema::create('tbuser', function (Blueprint $table) {
             $table->increments('tbuserid');
             $table->integer('tbuseridcountry')->unsigned();
-            $table->smallInteger('tbuseridleveluser')->unsigned();
+            $table->integer('tbuserlevelid')->unsigned();
             $table->string('tbusername',20);
             $table->string('tbuserlastname',30);
             $table->string('tbuserusername',10);
@@ -28,6 +29,11 @@ class CrearTBLuser extends Migration
             $table->boolean('tbuseractive')->default(true);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('tbuseridcountry', 'fk_country_id')->references('tbcountryid')->on('tbcountry')->onDelete('no action')->onUpdate('no action');
+
+            $table->foreign('tbuserlevelid', 'fk_userlevel_id')->references('tbuserlevelid')->on('tbuserlevel')->onDelete('no action')->onUpdate('no action');
+
         });
     }
 
