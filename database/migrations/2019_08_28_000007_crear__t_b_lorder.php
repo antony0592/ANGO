@@ -15,12 +15,16 @@ class CrearTBLorder extends Migration
     {
         Schema::create('tborder', function (Blueprint $table) {
             $table->Increments('tborderid');
-            $table->integer('tborderidclient');
+            $table->integer('tborderiduser')->unsigned();
             $table->Text('tborderdescription',500);
             $table->decimal('tbordertotalprice', 10, 2)->default(0,00);
-            $table->integer('tbordermethodpay');
+            $table->integer('tborderidmethodpay')->unsigned();
             $table->boolean('tborderestadepay')->default(false);
             $table->timestamps();
+
+            $table->foreign('tborderiduser', 'fk_user_id')->references('tbuserid')->on('tbuser')->onDelete('no action')->onUpdate('no action');
+
+            //$table->foreign('tborderidmethodpay', 'fk_methodpay_id2')->references('tbmethodpayid')->on('tbmethodpay')->onDelete('no action')->onUpdate('no action');
         });
     }
 

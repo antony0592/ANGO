@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'productos'], function () {
+    
+    Route::get('vista/{id?}', [ 
+        'uses' => 'TestController@vista',
+        'as' => 'productosVista'
+        ]);
+
+});
+

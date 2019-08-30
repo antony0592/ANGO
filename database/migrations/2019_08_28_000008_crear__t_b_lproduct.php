@@ -23,6 +23,9 @@ class CrearTBLproduct extends Migration
             $table->integer('tbproductvisits');
             $table->integer('tbproductstock');  
             $table->timestamps();
+
+            $table->foreign('tbproductidsupplier', 'fk_supplier_id')->references('tbsupplierid')->on('tbsupplier')->onDelete('no action')->onUpdate('no action');
+            $table->foreign('tbproductidcategory', 'fk_category_id')->references('tbcategoryid')->on('tbcategory')->onDelete('no action')->onUpdate('no action');
         });
     } 
 
