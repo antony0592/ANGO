@@ -10,17 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::group(['prefix'=>'productos'], function () {
-    
-    Route::get('vista/{id?}', [ 
-        'uses' => 'TestController@vista',
-        'as' => 'productosVista'
+    Route::get('/{id?}', [ 
+        'uses' => 'HomeController@viewHome',
+        'as' => 'viewHome'
         ]);
 
-});
 

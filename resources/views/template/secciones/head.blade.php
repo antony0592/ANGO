@@ -4,7 +4,7 @@
 <meta name="description" content="Sistema ANGO">
 <meta name="author" content="Anthony Salazar, Gabriel Navarro">
 <meta name="generator" content="">
-<title>@yield('title', 'Default') PROVEEDOR 1</title>
+<title>{{ $supplier->tbsuppliername }}</title>
 <!-- Bootstrap core CSS -->
 <link href="{{asset('css/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 <style>
