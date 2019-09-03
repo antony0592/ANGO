@@ -19,11 +19,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($product as $row)
+                  @foreach ($join as $row)
                   <tr>
                     <th scope="row">{{ $row->tbproductid }}</th>
                     <td>{{ $row->tbproductname }}</td>
-                    <td>{{ $row->tbproductidcategory }}</td>
+                    <td>{{ $row->tbcategoryname }}</td>
                     <td>{{ $row->tbproductprice}}</td>
                   </tr>
                   @endforeach
