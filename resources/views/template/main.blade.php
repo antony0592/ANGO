@@ -12,6 +12,8 @@
     <script src="{{ asset('js/plugins/jquery/jquery-3.4.1.slim.js') }}"></script>
      <!-- Bootstrap core JS -->
     <script src="{{ asset('css/plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <!-- NAV AMAZON JS -->
+    <script src="{{ asset('js/navAmazon/navAmazon.js') }}"></script>
     @yield('jspersonalizado')
   </body>
 </html>

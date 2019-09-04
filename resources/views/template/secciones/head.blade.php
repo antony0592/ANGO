@@ -4,9 +4,12 @@
 <meta name="description" content="Sistema ANGO">
 <meta name="author" content="Anthony Salazar, Gabriel Navarro">
 <meta name="generator" content="">
-<title>{{ $supplier->tbsuppliername }}</title>
+<title>Ango.com</title>
 <!-- Bootstrap core CSS -->
 <link href="{{asset('css/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+<link rel="icon" type="image/gif" href="{{ asset('favicon.ico') }}">
+<!-- NAV AMAZON CSS -->
+<link href="{{asset('css/navAmazon/navAmazon.css')}}" rel="stylesheet">
 <style>
     .bd-placeholder-img {
     font-size: 1.125rem;
