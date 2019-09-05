@@ -8,7 +8,7 @@ class Product extends Model
 {
     protected $table = 'tbproduct';
     protected $primaryKey = 'tbproductid';
-    protected $fillable = ['tbproductidsupplier','tbproductidcategory','tbproductname', 'tbproductprice', 'tbproductimage', 'tbproductactive','tbproductvisits','tbproductstock',];
+    protected $fillable = ['tbproductidsupplier','tbproductidcategory','tbproductname', 'tbproductprice','tbproductimage','tbproductactive','tbproductvisits','tbproductstock',];
 
     public function supplier(){
         return $this->belongsTo('app/Supplier');
