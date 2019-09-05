@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="es">
     @include('template.secciones.head')
-    @yield('csspersonalizado')
   <body>
       @include('template.secciones.nav')
       <div class="container">

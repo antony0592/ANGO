@@ -27,6 +27,6 @@ class HomeController extends Controller
             ->get(); 
 
 
-        return view("index",['supplier' => $objeto, 'product' => $objeto2, 'join' => $objeto3]);
+        return view("home",['supplier' => $objeto, 'product' => $objeto2, 'join' => $objeto3]);
      }
 }

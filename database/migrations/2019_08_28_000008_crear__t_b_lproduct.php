@@ -19,6 +19,7 @@ class CrearTBLproduct extends Migration
             $table->integer('tbproductidcategory')->unsigned(); 
             $table->string('tbproductname',45);
             $table->decimal('tbproductprice', 10, 2)->default(0,00);
+            $table->string('tbproductimage',200);
             $table->boolean('tbproductactive')->default(false);
             $table->integer('tbproductvisits');
             $table->integer('tbproductstock');  
