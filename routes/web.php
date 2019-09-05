@@ -14,6 +14,8 @@
         'uses' => 'HomeController@viewHome',
         'as' => 'viewHome'
         ]);
+    
+    
 
 
     Route::get('auth/login',  ['uses'=>'Auth\LoginController@getLogin', 'as'=>'auth.login']);
