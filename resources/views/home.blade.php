@@ -3,6 +3,7 @@
   <link href="{{asset('js/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
 @endsection
 @section('container')
+<label for="">Usuario</label>
   <!-- Advanced Tables -->
   <div class="panel panel-default">
       <div class="panel-heading">

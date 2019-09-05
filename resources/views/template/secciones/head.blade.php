@@ -10,6 +10,7 @@
 <link rel="icon" type="image/gif" href="{{ asset('favicon.ico') }}">
 <!-- NAV AMAZON CSS -->
 <link href="{{asset('css/navAmazon/navAmazon.css')}}" rel="stylesheet">
+@yield('csspersonalizado')
 <style>
     .bd-placeholder-img {
     font-size: 1.125rem;
