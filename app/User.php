@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var array
      */
-    protected $fillable = ['tbuseridcountry', 'tbuseridleveluser', 'tbusername', 'tbuserlastname','tbuseremail', 'tbuseraddress', 'tbuserimage', 'tbuseractive',];
+    protected $fillable = ['tbuseridcountry', 'tbuserlevelid', 'tbusername', 'tbuserlastname','tbuseremail', 'tbuseraddress', 'tbuserimage', 'tbuseractive',];
 
     /**
      * @var array
