@@ -4,36 +4,7 @@
 @endsection
 @section('container')
 <label for="">Usuario</label>
-  <!-- Advanced Tables -->
-  <div class="panel panel-default">
-      <div class="panel-heading">
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="example">
-              <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($join as $row)
-                  <tr>
-                    <th scope="row">{{ $row->tbproductid }}</th>
-                    <td>{{ $row->tbproductname }}</td>
-                    <td>{{ $row->tbcategoryname }}</td>
-                    <td>{{ $row->tbproductprice}}</td>
-                  </tr>
-                  @endforeach
-                </tbody>
-          </table>
-        <!--End Advanced Tables -->
-        </div>
-      </div>
-    </div>
+
 @endsection
 @section('footer')
 @endsection

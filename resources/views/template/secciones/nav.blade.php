@@ -11,10 +11,11 @@
         </div>
 
         <div class="enlaces">
-            <a href="#">Cuenta</a>
-            <a href="#">Promociones</a>
-            <a href="#">Mesa de Regalos</a>
-            <a href="#">Ayuda</a>
+            <a href="{{route('auth.login')}}">Hello, Sign in</a>
+            <a href="#">Orders</a>
+            <a href="#">Cart</a>
+            <a href="#">Help</a>
+            <a href="#">Logout</a>
         </div>
     </div>
 
