@@ -27,9 +27,9 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-    protected $loginPath = '/auth/login';
-
+    protected $redirectTo = '/viewHome';
+    
+    
     /**
      * Create a new controller instance.
      *
@@ -37,18 +37,23 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('getLogout');
     }
+
+    protected $loginPath = '/auth/login';
+    protected $redirectPath = '/';
 
     protected function getLogin(){
         return view('auth.login');
     }
-    protected function getLogout (){
-        return view('auth.login');
-    }
     protected function postLogin (){
-        return view('home');
+        flash('post')->success();
 
+        return view('auth.login');
+
+    }
+    protected function getLogout (){
+        return view('auth.logout');
     }
 
 }

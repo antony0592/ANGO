@@ -15,13 +15,15 @@
         'as' => 'viewHome'
         ]);
     
-    
+    Route::group(['prefix' => 'client'],function(){
+        //Route::resource('users','UsersController');
+    });
 
+    /* SIGN IN */
+    Route::get('client/users/create',  ['uses'=>'UsersController@create', 'as'=>'client.users.create']);
+    Route::post('client/users/store',  ['uses'=>'UsersController@store', 'as'=>'client.users.store']);
 
+    /* LOGIN */
     Route::get('auth/login',  ['uses'=>'Auth\LoginController@getLogin', 'as'=>'auth.login']);
     Route::post('auth/login',  ['uses'=>'Auth\LoginController@postLogin', 'as'=>'auth.login']);
     Route::get('auth/logout',  ['uses'=>'Auth\LoginController@getLogout', 'as'=>'auth.logout']);
-
-/*     Route::get('auth/login', 'Auth\LoginController@getLogin');
-    Route::post('auth/login', 'Auth\LoginController@postLogin');
-    Route::get('auth/logout', 'Auth\LoginController@getLogout'); */
