@@ -3,57 +3,25 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+    public function login(){
 
-    use AuthenticatesUsers,ThrottlesLogins;
+        $credentials = $this->validate(request(),[
+            'useremail'=> 'email|string|required',
+            'userpassword' => 'string|required'
+        ]);
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/viewHome';
-    
-    
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('getLogout');
+        if(Auth::attempt($credentials))
+        {
+            return 'Exito Login';
+        }
+        return $credentials;
+       // return redirect()->back()->withErrors(validator)->withInput();
+        ;
     }
-
-    protected $loginPath = '/auth/login';
-    protected $redirectPath = '/';
-
-    protected function getLogin(){
-        return view('auth.login');
-    }
-    protected function postLogin (){
-        flash('post')->success();
-
-        return view('auth.login');
-
-    }
-    protected function getLogout (){
-        return view('auth.logout');
-    }
-
-}
+ }

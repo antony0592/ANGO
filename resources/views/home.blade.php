@@ -4,32 +4,28 @@
 @endsection
 @section('container')
 <label for="">Usuario</label>
-
+    <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+        You are logged in!
+    </div>
+    <div class="row">
+        @foreach ($join as $image)
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            {{ $image->tbproductprice}}
+                    </div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        @endforeach
+    </div>
 @endsection
 @section('footer')
 @endsection
 @section('jspersonalizado')
-<script src="{{ asset('js/plugins/dataTables/datatables.min.js') }}"></script>
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function() {
-    $(document).ready(function() {
-    $('#example').dataTable( {
-          "language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nada que mostrar - disculpe!",
-            "info": "Mostrando la página _PAGE_ de _PAGES_",
-            "infoEmpty": "No se encontrarón registros",
-            "infoFiltered": "(Filtrando _MAX_ del total de registros)",
-            "search": "Buscar ",
-            "sPrevious": " Anterior ",
-            "next": " Siguiente "
-          },
-          "paging":   true,
-          "order":   [[0, 'desc']],
-          "ordering": true,
-          "info":     true
-        });
-  } );
-  } );
-</script>
 @endsection
