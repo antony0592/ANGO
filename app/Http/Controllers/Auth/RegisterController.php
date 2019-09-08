@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Carbon\Carbon;
+use Laracasts\Flash\Flash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,10 +65,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        /* return User::create([
+            'tbuseridcountry' => $data['country'],
+            'tbuserlevelid' => $data['level'],
+            'tbusername' => $data['name'],
+            'tbuserlastname' => null,
+            'tbuserusername' => null,
+            'tbuseremail' => $data['email'],
+            'tbuserpassword' => Hash::make($data['password']),
+            'tbuseraddress' => null,
+            'tbusercreditcard' => null,
+            'tbuserimage' => 'images/users/defauld.jpg',
+            'tbuseractive' => true,
+            'remember_token' => $data['_token'],
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]); */
+
+        $user = new User();
+        $user->tbuseridcountry = $request->country;
+        $user->tbuserlevelid = $request->level;
+        $user->tbusername = $request->name;
+        $user->tbuserlastname = null;
+        $user->tbuserusername = null;
+        $user->tbuseremail = $request->email;
+        $user->tbuserpassword = bcrypt($request->password);
+        $user->tbuseraddress = null;
+        $user->tbusercreditcard = null;
+        $user->tbuserimage = 'images/users/defauld.jpg';
+        $user->tbuseractive = true;
+        $user->remember_token = $request->_token;
+        $user->created_at = Carbon::now();
+        $user->updated_at = Carbon::now();
+        $user->save();
+        
     }
 }

@@ -5,7 +5,7 @@
     <div class="container" style='display: grid; align-items: center;justify-content: center;'>
         <a href="{{route('home')}}" title=""><img src="{{asset('images/logo_largo.PNG')}}" class="css-class" alt="Login Ango" height="51" width="123"></a>
         <p> 
-        {!! Form::open(['route'=>'client.users.store','method'=>'POST']) !!}
+        {!! Form::open(['route'=>'register','method'=>'POST']) !!}
         <div class="row">
             <div class="form-group col-md-6">
                 <h3>Create your account</h3>

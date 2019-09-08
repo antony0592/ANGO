@@ -11,7 +11,7 @@
         </div>
 
         <div class="enlaces">
-            <a href="{{route('auth.login')}}">Hello, Sign in</a>
+            <a href="{{route('login')}}">Hello, Sign in</a>
             <a href="#">Orders</a>
             <a href="#">Cart</a>
             <a href="#">Help</a>

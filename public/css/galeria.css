@@ -1,0 +1,16 @@
+
+.img_galeria{
+	width: 90px !important;
+	height: 83px !important;
+}
+
+.img_principal_galeria{
+	width: 400px !important;
+	height: 250px !important;
+}
+
+.contenedor_fotos{
+	width: 320px;
+	height: 250px;
+	overflow: auto;
+}

@@ -6,9 +6,31 @@ use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
 use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UsersController extends Controller
 {
+
+    use RegistersUsers;
+     /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -54,7 +76,7 @@ class UsersController extends Controller
         $user->updated_at = Carbon::now();
         $user->save();
         flash('Se ha registrado ".$user->tbusername." de forma exitosa!')->success();
-        return view('auth.login');
+        //return view('home');
     }
 
     /**
